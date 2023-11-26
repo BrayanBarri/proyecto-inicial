@@ -1,0 +1,24 @@
+.fondo{
+    background-color: #94cac5;
+}
+header{
+    background-color: #23635D;
+}
+
+footer{
+    background-color: #00302c;
+
+}
+.buttons{
+    text-align: right;
+}
+p{
+    color: aqua;
+    position: relative;
+}
+.d-flex{
+    
+    padding-left: 50%;
+    position:sticky;
+
+}
