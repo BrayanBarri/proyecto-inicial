@@ -36,7 +36,7 @@
 }
 .login-form-1 h3,h6{
     text-align: center;
-    color: #333;
+    color: #59ab6e;
 }
 .login-form-2{
     padding: 5%;
@@ -60,12 +60,12 @@
 }
 .login-form-1 .btnSubmit{
     font-weight: 600;
-    color: #fff;
-    background-color: #0062cc;
+    color:  #fff;
+    background-color: #59ab6e;
 }
 .login-form-2 .btnSubmit{
     font-weight: 600;
-    color: rgb(7, 62, 121);
+    color: #59ab6e;
     background-color: #fff;
 }
 .login-form-2 .ForgetPwd{
@@ -80,6 +80,89 @@
 } 
 
     </style>
+
+
+   
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('#esta').addEventListener('submit', function (event) {
+            // Validar contraseña
+            var contrasena = document.getElementById('contrasena').value;
+            var validarContrasena = document.getElementById('validarContrasena').value;
+
+            if (contrasena !== validarContrasena) {
+                alert('Las contraseñas no coinciden. Por favor, verifica.');
+                event.preventDefault();
+            } else if (!validarSeguridadContrasena(contrasena)) {
+                alert('La contraseña no es segura. Debe contener al menos 8 caracteres, incluyendo letras y números.');
+                event.preventDefault();
+            }
+
+            // Validar número telefónico
+            var telefono = document.getElementById('telefono').value;
+
+            if (!validarNumeroTelefonico(telefono)) {
+                alert('Número telefónico no válido. Debe contener solo números y tener al menos 10 dígitos.');
+                event.preventDefault();
+            }
+        });
+    });
+
+    // Función para validar seguridad de la contraseña
+    function validarSeguridadContrasena(contrasena) {
+        // Agrega tus propias reglas de seguridad aquí
+        return contrasena.length >= 8 && /\d/.test(contrasena) && /[a-zA-Z]/.test(contrasena);
+    }
+
+    // Función para validar número telefónico
+    function validarNumeroTelefonico(telefono) {
+        // Ajusta las reglas según tus necesidades
+        return /^\d{10,}$/.test(telefono);
+    }
+</script>
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('#esta2').addEventListener('submit', function (event) {
+        // Validar contraseña
+        var contrasena = document.getElementById('contra').value;
+        var validarContrasena = document.getElementById('validarContra').value;
+
+        if (contrasena !== validarContrasena) {
+            alert('Las contraseñas no coinciden. Por favor, verifica.');
+            event.preventDefault();
+        } else if (!validarSeguridadContrasena(contrasena)) {
+            alert('La contraseña no es segura. Debe contener al menos 8 caracteres, incluyendo letras y números.');
+            event.preventDefault();
+        }
+
+        // Validar número telefónico
+        var telefono = document.getElementById('telefono').value;
+
+        if (!validarNumeroTelefonico(telefono)) {
+            alert('Número telefónico no válido. Debe contener solo números y tener al menos 10 dígitos.');
+            event.preventDefault();
+        }
+    });
+});
+
+// Función para validar seguridad de la contraseña
+function validarSeguridadContrasena(contrasena) {
+    // Agrega tus propias reglas de seguridad aquí
+    return contrasena.length >= 8 && /\d/.test(contrasena) && /[a-zA-Z]/.test(contrasena);
+}
+
+// Función para validar número telefónico
+function validarNumeroTelefonico(telefono) {
+    // Ajusta las reglas según tus necesidades
+    return /^\d{10,}$/.test(telefono);
+}
+</script>
     
 </head>
 <body>
@@ -165,7 +248,7 @@
                      </div>
                      <div  class="form-group">
                          <h6>Ingresa tu Telefono</h6>
-                         <input  type="number"  id="telefonico"  class="form-control"name="telefono" required/>
+                         <input  type="number"  id="telefono"  class="form-control"name="telefono" required/>
                      </div >
                      <div  class="form-group">
                          <h6>Ingresa tu correo</h6>
@@ -210,15 +293,14 @@
                     <div class="form-group">
                         <p>Ingresa el Correo de la Empresa </p>
                         <input type="email" class="form-control" name="correo" required />
+                        <div class="form-group">
+                        <p>Ingresa tu contraseña</p>
+                        <input type="password" id="contra" class="form-control" name="clave" required />
                     </div>
                     <div class="form-group">
-                        <p>Ingresa tu nueva contraseña </p>
-                        <input type="password" id="contrasena" class="form-control" name="clave" required />
-                    </div>
-                    <div class="form-group">
-                        <p>confirma tu Contraseña </p>
-                        <input type="password" id="validarContrasena" class="form-control"  />
-                    </div>
+                        <p>Validar tu contraseña</p>
+                        <input type="password" id="validarContra" class="form-control" name=""  />
+                    </div><br>
                     <div class="form-group">
                         <input type="submit" class="btnSubmit" value="Registrarse"  />
                     </div>
