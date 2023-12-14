@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Validar número telefónico
-        var telefono = document.getElementById('empre').value;
+        var telefono = document.getElementById('telefono2').value;
 
         if (!validarNumeroTelefonico(telefono)) {
             alert('Número telefónico no válido. Debe contener solo números y tener al menos 10 dígitos.');
@@ -260,7 +260,7 @@ function validarNumeroTelefonico(telefono) {
                     </div>
                     <div class="form-group">
                         <p>Ingresa el Telefono de la Empresa </p>
-                        <input type="number" class="form-control" name="empre"required />
+                        <input type="number" class="form-control" name="telefono2"required />
                     </div>
                     <div class="form-group">
                         <p>Ingresa el Correo de la Empresa </p>
